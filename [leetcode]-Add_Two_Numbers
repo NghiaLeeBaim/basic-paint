@@ -74,9 +74,10 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
         }
     }
 
-    // Vong lap ket thuc, con tr
+    // Vong lap ket thuc, ta dung con tro result bo qua node dau tien
     struct ListNode *result = head->next;
+    // Tra lai ram
     free(head);
-
+    // Tra ve con tro result chi toi ket qua
     return result;
 }
