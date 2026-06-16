@@ -8,7 +8,8 @@
 
 #include <stdlib.h>
 
-// Khai báo hàm addTwoNumbers. Hàm này nhận vào 2 con trỏ l1, l2 trỏ tới vị trí đầu tiên của 2 danh sách trong ram. Hàm cam kết sẽ trả về một con trỏ kiểu struct ListNode* chỉ tới kết quả.
+// Khai báo hàm addTwoNumbers. Hàm này nhận vào
+ 2 con trỏ l1, l2 trỏ tới vị trí đầu tiên của 2 danh sách trong ram. Hàm cam kết sẽ trả về một con trỏ kiểu struct ListNode* chỉ tới kết quả.
 struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
 {
     // Yeu cau he dieu hanh cap ram vua size cho ListNode, ta ep no thanh kieu con tro (struct ListNode*) va add cho bien head.

@@ -1,0 +1,34 @@
+int lengthOfLongestSubstring(char* s) {
+    // Chi so cua mang la ma ASCII cua chu cai, Gia tri cua mang la vi tri cua chu cai do trong chuoi 's'
+    int a[128];
+    int l=0,r=0;
+    // Khoi tao so tay: Gan -1 cho tat ca 128 ky tu, y nghia la chua co ky tu nao tung xuat hien
+    for(int i=0;i <128;i++){
+        a[i]=-1;
+    }
+
+    // khai bao bien tong tinh do dai  chuoi con lon nhat tung tim thay
+    int max_len=0;
+
+    /*
+    - Vong lap dung r (right) de quet tu dau chuoi s[0] cho den khi gap ky tu ket thuc chuoi '\0'.
+    - cr la chu cai hien tai dang xet toi.
+    - Kiem tra so tay: Neu a[cr] >= l, nghia la chu cai nay DA TUNG XUAT HIEN, va vi tri cu cua no 
+      dang nam BEN TRONG cua so hien tai.
+    - Xu ly trung lap: Truot vach l (left) qua khoi vi tri cu do 1 buoc (l = a[cr] + 1) de loai bo no.
+    - Luon luon cap nhat vi tri moi nhat cua chu cai cr vao so tay: a[cr] = r.
+    - Tinh do dai cua so hien tai (r - l + 1), so sanh voi max_len de xem co pha ky luc khong.
+    */ 
+    for(r=0; s[r] !='\0'; r++){
+        char cr=s[r];
+        if (a[cr]>=l)
+        {
+            l=a[cr]+1;
+        }
+        a[cr]=r;
+        max_len=MAX(max_len,r-l+1);
+        
+    }
+    // Tra ve gia tri max_len
+    return max_len;
+}
